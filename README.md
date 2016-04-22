@@ -1,7 +1,7 @@
 
-### Shopping list
+## Shopping list
 
-## Instalation
+### Instalation
 
 ```bash
 $ npm install
