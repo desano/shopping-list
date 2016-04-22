@@ -1,0 +1,45 @@
+<ul class="list-group">
+  <li ng-repeat="list in lists" class="list-group-item">
+    <a href="#/lists/{{list.name}}">{{list.name}}</a>
+  </li>
+</ul>
+
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addListModal">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new list
+</button>
+
+<!-- Add list modal -->
+<div class="modal fade" id="addListModal" tabindex="-1" role="dialog" aria-labelledby="AddList">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add new list</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="listName" placeholder="New list name"></input>
+          </div>
+          <div class="form-group">
+            <label>Products list</label>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="product in products">
+                {{product}}
+              </li>
+            </ul>
+            <div class="form-inline">
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="productEntry" placeholder="Type product name">
+                <button class="btn btn-success" ng-click="addItem()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="addList()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

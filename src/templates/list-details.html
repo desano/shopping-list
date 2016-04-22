@@ -1,0 +1,7 @@
+<a href="#/lists"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back</a>
+<h3 class="text-center">{{listId}}</h3>
+<ul ng-repeat="list in lists | filter: listId" class="list-group">
+  <li ng-repeat="product in list.products" class="list-group-item">
+    {{product}}
+  </li>
+</ul>
